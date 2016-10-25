@@ -16,3 +16,9 @@ MySQL grants permissions to users based on the source of the connection as well 
 - `%` - All hosts
 - `localhost` - The localhost (127.0.0.1) network address
 - `hostnae` - A specific hostname
+Identify the users who are defined in the database:
+```
+mysql> use mysql;
+mysql> select user, host from user where user = '<username>';
+```
+For each of the entries, 
