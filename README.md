@@ -47,7 +47,7 @@ The typical recommendation is to disable the local admin acount in Ambari if int
 
 ![Image](images/ambari_user_dropdown.png?raw=true)
 
-![Image](images/ambari_chagne_pw.png?raw=true)
+![Image](images/ambari_change_pw.png?raw=true)
 
 ###Ambari database user:
 Ambari stores its data in a relational database. This databae can be one of several types. To change the user's password, first change it in the database where 
