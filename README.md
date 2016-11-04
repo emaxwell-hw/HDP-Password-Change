@@ -25,9 +25,9 @@ mysql> select user, host from user where user = '<username>';
 
 For each of the entries present for a particular user, issue a change password command:
 ```
-mysql> alter user 'username'@'%' set password=PASSWORD('new_password')';
-mysql> alter user 'username'@'localhost' set password=PASSWORD('new_password')';
-mysql> alter user 'username'@'hostname' set password=PASSWORD('new_password')';
+mysql> set password for 'username'@'%' = PASSWORD('new_password')';
+mysql> set password for 'username'@'localhost' = PASSWORD('new_password')';
+mysql> set password for 'username'@'hostname' = PASSWORD('new_password')';
 ```
 
 ###PostgreSQL Database
@@ -40,4 +40,15 @@ Enter it again:
 ```
 
 ##Changing HDP Passwords
+Within the HDP ecosystem, there area  number of services that utilize database, encryption, or administrator passwords.
+
+###Ambari admin user:
+The typical recommendation is to disable the local admin acount in Ambari if integrated with LDAP/AD for user login. However, if the admin user is enabled, the password should be changed regularly. To change the admin user's password, login to Ambari as an administrator. Navigate to `User Drop Down -> Manage Ambari -> Users -> admin -> Change Password`
+
+![Image](ambari_user_dropdown.png?raw=true)
+
+![Image](ambari_chagne_pw.png?raw=true)
+
+###Ambari database user:
+Ambari stores its data in a relational database. This databae can be one of several types. To change the user's password, first change it in the database where 
 
